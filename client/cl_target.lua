@@ -11,15 +11,15 @@ CreateThread(function()
         exports["qb-target"]:AddTargetModel(props, {
             options = {
                 {
-                    icon = "fas fa-music", 
-                    label = "Music Controls", 
+                    icon = "fas fa-music",
+                    label = "Music Controls",
                     action = function(data)
                         OpenControls(data)
                     end
                 },
                 {
-                    icon = "fas fa-hand-paper", 
-                    label = "Pick up", 
+                    icon = "fas fa-hand-paper",
+                    label = "Pick up",
                     action = function(data)
                         Pickup(data)
                     end
@@ -34,7 +34,7 @@ function OpenControls(objectData)
     if BoomboxTable then
 		for k, v in ipairs(BoomboxTable) do
 			if v.obj == objectData then
-                
+
                 local data = lib.callback.await('snipe-boombox:server:checkCitizenId', false, v.citizenid)
                 if data or isAdmin then
                     local playing = false
@@ -114,7 +114,7 @@ end
 function Volume(v)
     local volume = exports.xsound:getVolume(v.uuid)
     currentValue = 0
-    if not volume then 
+    if not volume then
         ShowNotification("Nothing Playing", "error")
         return
     end

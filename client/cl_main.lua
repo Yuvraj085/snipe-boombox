@@ -96,7 +96,7 @@ RegisterNetEvent("snipe-boombox:client:PlaceBoombox", function(type,object, item
                     heading = heading + 5
                     if heading > 360 then heading = 0.0 end
                 end
-        
+
                 if IsDisabledControlJustPressed(0, 175) then
                     heading = heading - 5
                     if heading < 0 then heading = 360.0 end
@@ -152,7 +152,7 @@ RegisterNetEvent('snipe-boombox:client:addNewBoombox', function(data)
         FreezeEntityPosition(obj, true)
         boombox.obj = obj
 	end
-    
+
     BoomboxTable[#BoomboxTable + 1] = boombox
 end)
 
